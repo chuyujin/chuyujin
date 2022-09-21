@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두산과학교실</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="icons">
+                <li><img src="img/h_l_1.png"></li>
+                <li><img src="img/h_l_2.png"></li>
+                <li><img src="img/h_l_3.png"></li>
+                <li><img src="img/h_l_4.png"></li>
+                <!-- 초기화 -->
+            </ul>
+            <div class="h_logo">
+                <a href="index.html"><img src="img/logo.png"></a>
+            </div>
+            <div class="h_logo_m"><img src="img/h_logo_m.png"></div>
+            <h2>두산과학교실</h2>
+            <div class="h_right">
+            <ul class="h_text">
+                <li>로그인</li>
+                <li>회원가입</li>
+                <!-- 초기화 -->
+            </ul>
+            <div class="menu">
+                <a href="#"><img src="img/btn.jpg"></a>
+              </div>
+              <nav class="left_gnbWrap">
+                          <a href="#" class="close">X</a>
+                          <ul class="left_gnb">
+                              <li>
+                                  <a href="DTL.html">DOOSAN TOMORROW LAB</a>
+                                  <ul>
+                                      <li><a href="DTL.html">소개</a></li>
+                                      <li><a href="DTL.html">신청접수</a></li>
+                                      <li><a href="DTL.html">활동스토리</a></li>
+                                      <li><a href="DTL.html">소식</a></li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="DTL.html">참여자 공간</a>
+                                  <ul>
+                                      <li><a href="DTL.html">공지사항</a></li>
+                                      <li><a href="DTL.html">참여자 Q&A</a></li>
+                                      <li><a href="DTL.html">자료실</a></li>
+                                      <li><a href="DTL.html">현장스케치</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </nav>
+                      <!-- 초기화 -->
+            </div>
+            <!-- 초기화 -->
+        </div>
+        <div id="mainimg">
+            <div class="inner">
+                <div class="m_text">
+                    <h2>DOOSAN<br>TOMORROW LAB</h2>
+                    <p>함께 살아가는 내일을 준비하며<br>창의력과 문제해결력을 키우는 즐거운 과학교실</p>
+                    <div class="box">자세히 보기</div>
+                </div>
+            </div>
+            <div class="m_img"><img src="img/mainimg.png"></div>
+        </div>
+        <div class="m_text_m">
+            <h2>DOOSAN<br>TOMORROW LAB</h2>
+            <p>함께 살아가는 내일을 준비하며<br>창의력과 문제해결력을 키우는 즐거운 과학교실</p>
+            <div class="box">자세히 보기</div>
+        </div>
+        <div id="contents">
+            <div class="box1">
+                <div class="inner">
+                    <h3>DTL 프로젝트</h3>
+                    <div class="listset">
+                        <div class="list1">
+                            <p>[2021] 호남고등학교</p>
+                            <h4>Green Smart City</h4>
+                            <img src="img/box1_1.jpg">
+                        </div>
+                        <div class="list2">
+                            <p>[2021] 순창제일고등학교</p>
+                            <h4>자동 분리수거 쓰레기통</h4>
+                            <img src="img/box1_2.jpg">
+                        </div>
+                        <div class="list3">
+                            <p>[2021] 칠원고등학교</p>
+                            <h4>해양 쓰레기 수거기</h4>
+                            <img src="img/box1_3.jpg">
+                        </div>
+                        <!-- 초기화 -->
+                    </div>
+                    <div class="listset_m">
+                        <div><img src="img/box1_1_m.jpg"></div>
+                        <div><img src="img/box1_2_m.jpg"></div>
+                        <div><img src="img/box1_3_m.jpg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="inner">
+                    <h3>DTL 프로그램과정</h3>
+                    <div class="textset">
+                        <div class="t_img">
+                            <div><img src="img/box2_1.jpg"></div>
+                            <div><img src="img/box2_2.jpg"></div>
+                        </div>
+                        <div class="t_text">
+                            <div class="t_box"> 
+                            <div class="t_left">
+                                <div>중학교</div>
+                                <div>
+                                    <P>우리가 그리는 더 좋은 세상</P>
+                                    <p>기술과 환경의 변화 경험 및 의미 이해</p>
+                                </div>
+                                <div>
+                                    <p>
+                                    ·생활 속 친환경 에너지와 기술변화 이해<br>
+                                    ·개인별 키트 제작을 통한 과학기술원리 체득<br>
+                                    ·더 좋은 미래를 위한 개인별 아이디어 구체화
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="t_right">
+                                <div>고등학교</div>
+                                <div>
+                                    <P>우리가 만드는 더 좋은 세상</P>
+                                    <P>미래사회 일원으로서 문제 해결 및 지속가능 성장 고민</P>
+                                </div>
+                                <div>
+                                    <p>
+                                    ·지속가능발전목표 이해 및 사회문제 공감<br>
+                                    ·창의적 사고 및 기술(AI) 기반 문제해결역량 함양<br>
+                                    ·지속가능한 성장에 대한 고민 및 행동 변화 유도
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 초기화 -->
+                            </div>
+                        </div>
+                        <!-- 초기화 -->
+                    </div>
+                    <div class="textset_t"><img src="img/box2.jpg"></div>
+                    <div class="textset_m"><img src="img/box2_m.jpg"></div>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="inner">
+                    <div class="box3_l">
+                        <P>DOOSAN TOMORROW LAB</P>
+                        <p>두산과학교실 참여 신청하기<span><img src="img/box3_l.png"></span></p>
+                        <div class="icon"><img src="img/box3_l_icon.png"></div>
+                    </div>
+                    <div class="box3_r"> 
+                        <P>DOOSAN TOMORROW LAB</P>
+                        <p>DTL 프로젝트 바로가기<span><img src="img/box3_r.png"></span></p>
+                        <p>지난 DTL에 참여한 학생들의 작품을 만나보세요.</p>
+                        <div class="icon"><img src="img/box3_r_icon.png"></div>
+                    </div>
+                    <!-- 초기화 -->
+                    <div class="box3_t"><img src="img/box3_t_m.jpg"></div>
+                    <div class="box3_b"><img src="img/box3_b_m.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner"> 
+                <div class="f_text">
+                    <p>이용약관 | 개인정보처리방침 | 이메일무단수집거부 | 주최 · 주관 사이트</p>
+                    <p>(04522) 서울시 중구 무교로20 초록우산 어린이재단 서울2지역본부<br>
+                    TEL: 02-752-2792 | E-MAIL: doosantomorrowlab@gmail.com | FAX: 02-777-1794</p>
+                    <p>Copyright©Dosan Tomorrow Lab. All rights reserved.</p>
+                </div>
+                <div class="f_logo"><img src="img/f_logo.png"></div>
+                <!-- 초기화 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

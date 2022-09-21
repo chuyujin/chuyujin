@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두산과학교실sub</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="icons">
+                <li><img src="img/h_l_1.png"></li>
+                <li><img src="img/h_l_2.png"></li>
+                <li><img src="img/h_l_3.png"></li>
+                <li><img src="img/h_l_4.png"></li>
+                <!-- 초기화 -->
+            </ul>
+            <div class="h_logo">
+                <a href="index.html"><img src="img/logo.png"></a>
+            </div>
+            <div class="h_logo_m"><img src="img/h_logo_m.png"></div>
+            <h2>두산과학교실</h2>
+            <div class="h_right">
+            <ul class="h_text">
+                <li>로그인</li>
+                <li>회원가입</li>
+                <!-- 초기화 -->
+            </ul>
+            <div class="menu">
+                <a href="#"><img src="img/btn.jpg"></a>
+              </div>
+              <nav class="left_gnbWrap">
+                          <a href="#" class="close">X</a>
+                          <ul class="left_gnb">
+                              <li>
+                                  <a href="DTL.html">DOOSAN TOMORROW LAB</a>
+                                  <ul>
+                                      <li><a href="DTL.html">소개</a></li>
+                                      <li><a href="DTL.html">신청접수</a></li>
+                                      <li><a href="DTL.html">활동스토리</a></li>
+                                      <li><a href="DTL.html">소식</a></li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="DTL.html">참여자 공간</a>
+                                  <ul>
+                                      <li><a href="DTL.html">공지사항</a></li>
+                                      <li><a href="DTL.html">참여자 Q&A</a></li>
+                                      <li><a href="DTL.html">자료실</a></li>
+                                      <li><a href="DTL.html">현장스케치</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </nav>
+                      <!-- 초기화 -->
+            </div>
+            <!-- 초기화 -->
+        </div>
+        <div id="s_main">
+            <div class="inner">
+                <div class="s_m_text">
+                <h2>DOOSAN<br>
+                    TOMMORROW LAB</h2>
+                <p>내 손으로 직접 만들어가는 우리의 미래</p>
+                </div>
+                <ul class="s_m_menu">
+                    <li>사업소개</li>
+                    <li>프로그램 특징</li>
+                    <li>지원 대상</li>
+                    <!-- 초기화 -->
+                </ul>
+            </div>
+        </div>
+        <div id="s_main_t">
+            <img src="images/s_mainimg.jpg">
+            <div class="s_m_text">
+                <h2>DOOSAN<br>
+                TOMMORROW LAB</h2>
+                <p>내 손으로 직접 만들어가는 우리의 미래</p>
+            </div>
+        </div>
+        <div id="s_main_m"><img src="images/s_m_main.jpg"></div>
+        <div id="s_contents">
+            <div class="s_box1">
+                <div class="inner">
+                    <h3>‘DOOSAN TOMMOROW LAB’은 무엇인가요?</h3>
+                    <ul class="s_b_textset">
+                        <li><img src="images/s_box1_1.jpg"></li>
+                        <li><img src="images/s_box1_2.jpg"></li>
+                        <li><img src="images/s_box1_3.jpg"></li>
+                        <!-- 초기화 -->
+                    </ul>
+                    <ul class="s_b_textset_m">
+                        <li><img src="images/s_m_box1_1.jpg"></li>
+                        <li><img src="images/s_m_box1_2.jpg"></li>
+                        <li><img src="images/s_m_box1_3.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="s_box2">
+                <div class="inner">
+                    <div class="s_b_n">사업소개</div>
+                    <p>DOOSAN TOMORROW LAB은 미래 사회와 변화에 대한 청소년들의 관심을 고취시키고<br>
+                    인문학적 소양을 겸비한 과학인재를 육성하기 위해, 중·고등학교에 창의융합교육 커리큘럼 및<br>
+                    교·구재 등을 지원하는 두산그룹의 사회공헌 사업입니다.</p>
+                    <p>DTL은 미래 사회와 변화에 대한 청소년들의 관심을<br>
+                        고취시키며 중·고등학교에 창의융합교육 커리큘럼 및<br>
+                         교·구재 등을 지원하는 두산그룹의 사회공헌 사업입니다.</p>
+                    <ul class="s_imgset">
+                        <li><img src="images/s_box1_4.jpg"></li>
+                        <li><img src="images/s_box1_5.jpg"></li>
+                        <li><img src="images/s_box1_6.jpg"></li>
+                        <!-- 초기화 -->
+                    </ul>
+                    <div class="s_b_n">프로그램 특징</div>
+                    <div class="s_listset">
+                        <div><p>인공지능, AR/VR등<br>
+                            최신 기술 체험</p>
+                            <p>인공지능, AR/VR등
+                                최신 기술 체험</p></div>
+                        <div><p>온라인실습에 적합한<br>
+                            맞춤형 콘텐츠</p>
+                            <p>온라인실습에 적합한
+                                맞춤형 콘텐츠</p></div>
+                        <div><p>온라인운영 메뉴얼과<br>
+                            실습 가이드 제공</p>
+                            <p>온라인운영 메뉴얼과
+                                실습 가이드 제공</p></div>
+                        <!-- 초기화 -->
+                    </div>
+                </div>
+            </div>
+            <div class="s_box3">
+                <div class="s_b_n">지원 대상</div>
+                <div class="inner">
+                    <div><p>두산 사업장 인근 중학교 자유학년제, 고등학교 자율동아리 활동학교 중 선정</p>
+                        <p>두산 사업장 인근 중학교 자유학년제, 고등학교<br> 자율동아리 활동학교 중 선정</p></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner"> 
+                <div class="f_text">
+                    <p>이용약관 | 개인정보처리방침 | 이메일무단수집거부 | 주최 · 주관 사이트</p>
+                    <p>(04522) 서울시 중구 무교로20 초록우산 어린이재단 서울2지역본부<br>
+                    TEL: 02-752-2792 | E-MAIL: doosantomorrowlab@gmail.com | FAX: 02-777-1794</p>
+                    <p>Copyright©Dosan Tomorrow Lab. All rights reserved.</p>
+                </div>
+                <div class="f_logo"><img src="img/f_logo.png"></div>
+                <!-- 초기화 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

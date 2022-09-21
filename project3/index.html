@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마켓컬리</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <script src="js/min/jquery-v1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/min/jquery-finger-v0.1.0.min.js" type="text/javascript"></script>
+    <link href="css/flickerplate.css" type="text/css" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+
+            $('.flicker-example').flicker();
+        });
+    </script>
+<!-- box2 플러그인 -->
+    <link rel="stylesheet" type="text/css" href="css/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="css/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var box2 = jQuery.noConflict();
+        box2(document).on('ready', function() {
+
+            box2(".regular").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+
+                responsive: [ // 반응형 웹 구현 옵션
+                    {
+                        breakpoint: 1279, //화면 사이즈 1279px
+                        settings: {
+                            //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768, //화면 사이즈 768px
+                        settings: {
+                            //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+          
+        });
+
+    </script>
+<!-- 끝 -->
+   
+</head>
+<body>
+    <div id="wrap">
+       <div id="header">
+          <div class="h_logo"><a href="KURLY.html"><img src="img/h_logo.png"></a></div>
+          <ul class="h_menu">
+            <li><a href="ABOUT KURLY.html">ABOUT KURLY</a></li>
+            <li><a href="SHOP.html">SHOP</a></li>
+            <li><a href="CAREERS.html">CAREERS</a></li>
+            <li><a href="NOTICE.html">NOTICE</a></li>
+            <!-- 초기화 -->
+          </ul>
+          <ul class="h_join">
+            <li class="pointer">LOGIN</li>
+            <li class="pointer">JOIN</li>
+            <!-- 초기화 -->
+          </ul>
+            <!--초기화  -->
+          <div class="h_icon1"><img src="images/m_h_icon1.png"></div>
+          <div class="h_icon2"><img src="images/m_h_icon2.png"></div>
+       </div>
+       <div id="mainimg">
+           <div class="flicker-example" data-block-text="false">
+              <ul>
+                 <li>
+                    <div class="main_t">
+                        <h2>7일간의 맛있는 축제<br><span>컬리 FOOD WEEK</span></h2>
+                        <p>최대 33% 할인 + 브랜드 쿠폰 6종</p>
+                        <p>최대 33% 할인 + <br>브랜드 쿠폰 6종</p>
+                    </div>
+                 </li>
+                 <li>
+                    <div class="main_t">
+                        <h2>매일 먹고 싶은<br><span>든든한 간편 한 끼</span></h2>
+                        <p>요거트볼부터 식사빵까지, 최대 20% 할인</p>
+                        <p>요거트볼부터 식사빵까지,<br>최대 20% 할인</p>
+                    </div>
+                 </li>
+                 <li>
+                    <div class="main_t">
+                        <h2>쾌적하게 즐기는 주말 마트<br><span>금주의 SALE 코너</span></h2>
+                        <p>단 3일! 자두부터 한우 등심까지<br>최대 30% 할인</p>
+                        <p>단 3일! 자두부터 한우 등심까지<br>최대 30% 할인</p>
+                    </div>
+                 </li>
+              </ul>
+           </div>
+          
+       </div>
+       <div id="contents">
+          <div class="box1">
+            <div class="inner">
+              <h3 class="text-focus-in">Let's all live a happy life</h3>
+              <p>생산자와 소비자, 판매자까지 모두 행복하고 맛있는 삶을 살 수 있도록<br>
+              컬리는 오늘도 열심히 발로 뛰며 고민합니다.</p>
+              <div class="click">
+                <img src="img/box1_img.jpg">
+                <div class="pointer">클릭하면 영상이 시청됩니다</div>
+              </div>
+              <div><img src="images/m_box1.jpg"></div>
+            </div>
+          </div>
+          <div class="box2">
+            <div class="inner">
+                <h4 class="animate__animated animate__fadeInUp">베스트 상품</h4>
+                <!-- 플러그인 -->
+                <section class="regular slider">
+                    <div>
+                        <img src="images/box2_1.jpg">
+                    </div>
+                    <div>
+                        <img src="images/box2_2.jpg">
+                    </div>
+                    <div>
+                        <img src="images/box2_3.jpg">
+                    </div>
+                    <div>
+                        <img src="images/box2_4.jpg">
+                    </div>
+                    <div>
+                        <img src="images/box2_5.jpg">
+                    </div>
+                    <div>
+                        <img src="images/box2_6.jpg">
+                    </div>
+                </section>
+                <!-- 끝 -->
+            </div>
+          
+          </div>
+          <div class="box3">
+            <div class="inner">
+                <h4 class="animate__animated animate__fadeInUp">마켓컬리 안내</h4>
+                <div class="box3_t">
+                    <p>마켓컬리가 처음이신가요?</p>
+                    <div class="box3_t_t">
+                        <div class="pointer"><p>마켓컬리<br>샛별·택배 배송안내</p></div>
+                        <div class="pointer"><p>마켓컬리<br>등급별 헤택 소개</p></div>
+                        <div class="pointer"><p>신규고객 대상<br>첫 구매 특별 헤택</p></div>
+                        <div><p>마켓컬리<br>샛별·택배 배송안내</p></div>
+                        <div><p>마켓컬리<br>등급별 헤택 소개</p></div>
+                        <div><p>신규고객 대상<br>첫 구매 특별 헤택</p></div>
+                        <!--초기화 -->
+                    </div>
+                    <div class="box3_t_b">
+                         <div class="box3_t_b_1">
+                            <p>공지사항</p>
+                            <ul class="text">
+                                <li class="pointer">[가격인상공지] 상하치즈 후레쉬 모짜렐라 
+                                    <span>2022.07.08</span>
+                                </li>
+                                <li class="pointer">[가격인상공지] 생활공작소 세제 외 19건
+                                    <span>2022.07.08</span>
+                                </li>
+                                <li class="pointer">[가격인상공지] 이타카 블라썸 매트 외 2건
+                                    <span>2022.07.05</span>
+                                </li>
+                                <li class="pointer">[마켓컬리] 종이박스 포장재 회수 종료 안내
+                                    <span>2022.06.27</span>
+                                </li>
+                                <li class="pointer">[마켓컬리] 포장재 회수 서비스 안내
+                                    <span>2022.06.18</span>
+                                </li>
+                            </ul>
+                         </div>
+                         <div class="box3_t_b_2">
+                            <p>인재채용</p>
+                            <ul class="text">
+                                <li class="pointer">[채용안내] 채용프로세스 소개 
+                                    <span>상시모집</span>
+                                </li>
+                                <li class="pointer">[채용공고] 채용중인 공고 확인
+                                    <span>상시모집</span>
+                                </li>
+                                <li class="pointer">[채용문의] 채용관련 문의
+                                    <span>상시모집</span>
+                                </li>
+                                <li class="pointer">[입사지원] 지원 분야 확인
+                                    <span>상시모집</span>
+                                </li>
+                                <li class="pointer">[복리후생] 복리후생 제도 안내
+                                    <span>상시모집</span>
+                                </li>
+                            </ul>
+                         </div>
+                         <div class="box3_t_b_3">
+                            <p>고객센터</p>
+                            <div class="pointer"><p>카카오톡 문의하기</p></div>
+                            <div class="pointer"><p>1 : 1 문의하기</p></div>
+                            <div class="pointer"><p>대량주문 문의하기</p></div>
+                         </div>
+                         <!-- 초기화 -->
+                    </div>
+                    <div class="box3_t_b_m">
+                        <div>
+                            <P>공지사항</P>
+                            <div class="m_btn"><img src="images/m_main_r.png"></div>
+                        <!-- 초기화 -->
+                        </div>
+                        <div>
+                            <P>인재채용</P>
+                            <div class="m_btn"><img src="images/m_main_r.png"></div>
+                        <!-- 초기화 -->
+                        </div>
+                        <div>
+                            <P>고객센터</P>
+                            <div class="m_btn"><img src="images/m_main_r.png"></div>
+                        <!-- 초기화 -->
+                        </div>
+                    <!-- 초기화 -->
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="box4">
+            <div class="inner">
+                <h4 class="animate__animated animate__fadeInUp">일상 속 마켓컬리</h4>
+                <ul class="box4_img">
+                    <li><img src="img/box4_img1.jpg"></li>
+                    <li><img src="img/box4_img2.jpg"></li>
+                    <li><img src="img/box4_img3.jpg"></li>
+                    <li><img src="img/box4_img4.jpg"></li>
+                    <li><img src="img/box4_img5.jpg"></li>
+                    <li><img src="img/box4_img6.jpg"></li>
+                    <li><img src="img/box4_img7.jpg"></li>
+                    <li><img src="img/box4_img8.jpg"></li>
+                    <!-- 초기화 -->
+                </ul>
+            </div>
+          </div>
+       </div>
+       <div id="footer">
+        <div class="inner">
+            <div class="f_text">
+                <p>개인정보처리방침 | 이용약관 | 이메일무단수집거부</p>
+                <p>상호 : 주식회사 컬리 | 대표자 : 김슬아 | TEL : 1644-1107 | FAX : 070-7500-6098
+                <br>주소 : 서울특별시 강남구 테헤란 133, 18층(역삼동)
+                <br>©KURLY CORP. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="f_logo"><img src="img/f_logo.png"></div>
+            <!-- 초기화 -->
+        </div>
+       </div>
+       <div id="m_footer">
+          <div class="m_f_text">
+                <p>개인정보처리방침 | 이용약관 | 이메일무단수집거부</p>
+                <p>상호 : 주식회사 컬리 | 대표자 : 김슬아 | TEL : 1644-1107 | FAX : 070-7500-6098
+                <br>주소 : 서울특별시 강남구 테헤란 133, 18층(역삼동)
+                <br>©KURLY CORP. ALL RIGHTS RESERVED.</p>
+          </div>
+          <div class="m_f_logo"><img src="img/f_logo.png"></div>
+            <!-- 초기화 -->
+        </div>
+    </div>
+</body>
+</html>
