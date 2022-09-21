@@ -118,8 +118,9 @@ h1, h2, h3, h4, h5, h6 {
       content: '';
       background: rgba(0, 0, 0, 0.4); }
   @media screen and (max-width: 768px) {
-    #colorlib-page {
-      padding-top: 5em; } }
+    /* #colorlib-page {
+      padding-top: 5em; }  */
+    }
 
 
     /*직접 작성  */
@@ -1374,7 +1375,8 @@ input[type="text"] {
  .mainimg_bg{width:100%; height: 700px;
   background-position: center center; background-repeat: no-repeat;
   background-size: cover;
-  position: absolute; top: 0; left: 0; right: 0;
+  position: relative; 
+  /* top: 0; left: 0; right: 0; */
   margin: 0 auto; z-index: -999;}
 
   .colorlib-navbar-brand{margin-top: 5%;}
@@ -1386,7 +1388,7 @@ input[type="text"] {
   .container{padding: 0;}
     
   
-  .cardnews_b{width: 425px; height: 469px; position: relative;}
+  .cardnews_b{width: 100%; height: 469px; position: relative;}
 
   .cardnews_b>img{width: 100%;}
   .cardnews_n{float: left; margin-left: 9%; margin-bottom: 80px;}
@@ -1494,7 +1496,7 @@ body{position: relative;}
 /*  */
 
 /* 이전페이지 */
-.button_b{position: absolute; right: 13%; bottom: 1%;
+.button_b{position: absolute; right: 14%; bottom: 1%;
   background-color: #283A42; border: none; 
   border-radius: 50%; width: 50px; height: 50px;}
   
@@ -1513,8 +1515,10 @@ a{text-decoration: none;}
 /* 타이핑 효과 */
 .text_box{
   font-size: 2rem;
-  margin-top: 23%;
-  margin-left: 40%;
+  /* margin-top: 23%;
+  margin-left: 40%; */
+  position: absolute;
+  top: 37%; left: 43%;
 }
 
 .text{color: #283A42;
@@ -1548,18 +1552,17 @@ img{vertical-align: unset; width: 100%;}
   font-family: 'NotoSansCJKkr-Medium';
 margin-bottom: unset;}
 
-@media (max-width: 1399px){}
+@media (max-width: 1399px){
+
+  .button_b{right: 15.5%;}
+}
 
 @media (max-width: 768px){
   .cardnews_bg{width: 100%; }
   .cardnews_bg_2{width: 100%;}
   .cardnews_bg_3{width: 100%;}
-  #main_image{width: 100%;}
-  #main_image_2{width: 100%;}
-  #main_image_3{width: 100%;}
-  #main_image_4{width: 100%;}
-  #main_image_5{width: 100%;}
-  #main_image_6{width: 100%;}
+  .button_b{right: 18%;}
+
   
 }
 
