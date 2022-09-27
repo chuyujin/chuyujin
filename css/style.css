@@ -1552,7 +1552,8 @@ img{vertical-align: unset; width: 100%;}
   font-family: 'NotoSansCJKkr-Medium';
 margin-bottom: unset;}
 
-.pointer{animation: updown ease-in-out 1s infinite alternate;}
+.pointer{
+  animation: updown ease-in-out 1s infinite alternate;}
 
 @media (max-width: 1399px){
 
