@@ -1572,7 +1572,8 @@ margin-bottom: unset;}
 
 
 
-.pointer{animation: updown ease-in-out 1s infinite alternate;}
+.pointer{animation: updown ease-in-out 1s infinite alternate;
+width: 60px; height: auto;}
 
 
 /* 직접 작성 종료 */
