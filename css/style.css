@@ -1570,15 +1570,14 @@ margin-bottom: unset;}
 
 
 
-.pointer{margin-left:0 ;
-width: 94px; height: auto;}
-.pointer_img{margin-left: 20px; animation: motion 1.3s linear 0s infinite;}
+
+.pointer_img{animation: motion 1.3s linear 0s infinite;}
         
 @keyframes motion {
 	0% {margin-top: 0px;}
-	20% {margin-top: 10px;}
+	20% {margin-top: 20px;}
 	40% {margin-top: 0px;}
-	60% {margin-top: 10px;}
+	60% {margin-top: 20px;}
 	80% {margin-top: 0px;}
 	100% {margin-top: 0px;}
 }
