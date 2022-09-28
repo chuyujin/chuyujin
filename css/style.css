@@ -1570,8 +1570,18 @@ margin-bottom: unset;}
 
 
 
-.pointer{animation: updown ease-in-out 1s infinite alternate;
+.pointer{margin-left:0 ;
 width: 94px; height: auto;}
+.pointer_img{margin-left: 20px; animation: motion 1.3s linear 0s infinite;}
+        
+@keyframes motion {
+	0% {margin-top: 0px;}
+	20% {margin-top: 10px;}
+	40% {margin-top: 0px;}
+	60% {margin-top: 10px;}
+	80% {margin-top: 0px;}
+	100% {margin-top: 0px;}
+}
 
 
 /* 직접 작성 종료 */
