@@ -1572,8 +1572,7 @@ margin-bottom: unset;}
 
 
 
-.pointer{margin-top: 20px;}
-.pointer_img{animation: updown ease-in-out 1s infinite alternate;
-margin-top: 0;}  
+.pointer{animation: updown ease-in-out 1s infinite alternate;}
+
 
 /* 직접 작성 종료 */
